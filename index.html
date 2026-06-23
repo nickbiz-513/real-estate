@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Estate Mumbai — MMR Ultra-Luxury Residences</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Metropolis:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --surface: #fbf9f9;
+  --surface-dim: #dbdad9;
+  --surface-low: #f5f3f3;
+  --surface-container: #efeded;
+  --surface-high: #e9e8e7;
+  --surface-highest: #e4e2e2;
+  --on-surface: #1b1c1c;
+  --on-surface-variant: #4d4638;
+  --outline: #7f7666;
+  --outline-variant: #d0c5b2;
+  --primary: #765b05;
+  --primary-container: #cba952;
+  --on-primary: #ffffff;
+  --inverse-primary: #e6c269;
+  --secondary: #5f5e5e;
+  --on-secondary: #ffffff;
+  --secondary-container: #e5e2e1;
+  --ink: #010101;
+  --gold: #CBA952;
+  --gold-dim: #e6c269;
+  --mahaRERA-blue: #005DAA;
+  --white: #ffffff;
+  --off-white: #F9F9F7;
+  --error: #ba1a1a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: 'Metropolis', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-metro { font-family: 'Metropolis', sans-serif; }
+
+.t-display { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 64px); font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; }
+.t-headline-lg { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 40px); font-weight: 400; line-height: 1.2; }
+.t-headline-md { font-family: 'Playfair Display', serif; font-size: clamp(26px, 2.5vw, 32px); font-weight: 400; line-height: 1.3; }
+.t-body-lg { font-family: 'Metropolis', sans-serif; font-size: 18px; font-weight: 400; line-height: 1.6; letter-spacing: 0.01em; }
+.t-body-md { font-family: 'Metropolis', sans-serif; font-size: 16px; font-weight: 400; line-height: 1.6; }
+.t-label { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; line-height: 1.0; letter-spacing: 0.15em; text-transform: uppercase; }
+.t-rera { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; line-height: 1.4; letter-spacing: 0.02em; }
+
+/* Material Icons */
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+
+/* Layout */
+.container { max-width: 1440px; margin: 0 auto; padding: 0 80px; }
+@media (max-width: 768px) { .container { padding: 0 20px; } }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(251,249,249,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(127,118,102,0.15);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 80px;
+  transition: padding 0.3s ease;
+}
+nav.scrolled { padding: 14px 80px; }
+@media (max-width: 768px) { nav { padding: 16px 20px; } nav.scrolled { padding: 12px 20px; } }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 500; color: var(--primary); letter-spacing: 0.08em; cursor: pointer; }
+.nav-links { display: flex; gap: 48px; align-items: center; }
+@media (max-width: 768px) { .nav-links { display: none; } }
+.nav-link {
+  font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none;
+  color: var(--on-surface); position: relative; padding-bottom: 2px; cursor: pointer;
+  transition: color 0.3s;
+}
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link:hover { color: var(--primary); }
+.btn-book-view {
+  font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+  padding: 16px 32px; background: var(--ink); color: var(--white); border: none;
+  transition: background 0.3s;
+}
+.btn-book-view:hover { background: var(--primary); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+@media (max-width: 768px) { .hamburger { display: flex; } }
+.hamburger span { display: block; width: 24px; height: 1px; background: var(--ink); transition: all 0.3s; }
+.mobile-menu {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99;
+  background: var(--surface); flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu .nav-link { font-size: 14px; }
+
+/* PAGES */
+.page { display: none; padding-top: 80px; }
+.page.active { display: block; }
+@media (max-width: 768px) { .page { padding-top: 68px; } }
+
+/* === HOME PAGE === */
+.hero {
+  position: relative; min-height: 100vh; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2520 50%, #1a1812 100%);
+}
+.hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%); }
+.hero-content {
+  position: relative; z-index: 2; padding: 80px 80px 120px;
+  width: 100%; max-width: 1440px; margin: 0 auto;
+}
+@media (max-width: 768px) { .hero-content { padding: 40px 20px 80px; } }
+.hero-eyebrow { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 80px); font-weight: 400; line-height: 1.05; color: var(--white); margin-bottom: 24px; max-width: 700px; }
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-sub { font-family: 'Metropolis', sans-serif; font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 480px; margin-bottom: 48px; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary-gold { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 18px 40px; background: var(--gold); color: var(--ink); border: none; cursor: pointer; transition: all 0.3s; }
+.btn-primary-gold:hover { background: var(--gold-dim); }
+.btn-ghost-white { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 17px 40px; background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s; }
+.btn-ghost-white:hover { border-color: rgba(255,255,255,0.8); }
+.hero-scroll { position: absolute; bottom: 40px; right: 80px; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.5); }
+.hero-scroll span { font-family: 'Metropolis', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; }
+.hero-scroll-line { width: 1px; height: 60px; background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent); animation: scrollLine 2s ease-in-out infinite; }
+@keyframes scrollLine { 0%,100%{opacity:0.3;transform:scaleY(1) translateY(0)} 50%{opacity:1;transform:scaleY(0.6) translateY(10px)} }
+
+/* Collection */
+.section { padding: 120px 80px; }
+@media (max-width: 768px) { .section { padding: 64px 20px; } }
+.section-eyebrow { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; gap: 24px; flex-wrap: wrap; }
+.section-header-text { max-width: 500px; }
+.link-view-all { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; cursor: pointer; transition: gap 0.3s; }
+.link-view-all:hover { gap: 12px; }
+
+/* Property grid */
+.property-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+@media (max-width: 1024px) { .property-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .property-grid { grid-template-columns: 1fr; } }
+
+.property-card { cursor: pointer; }
+.property-card-img { position: relative; aspect-ratio: 3/4; overflow: hidden; background: var(--surface-container); }
+.property-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+.property-card:hover .property-card-img img { transform: scale(1.04); }
+.property-badge {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  background: var(--gold); color: var(--ink);
+  font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 12px;
+}
+.property-status {
+  position: absolute; top: 16px; right: 16px; z-index: 2;
+  font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--white);
+  text-align: right; line-height: 1.3;
+}
+.property-card-body { padding: 20px 0 16px; display: flex; flex-direction: column; gap: 8px; position: relative; }
+.property-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; line-height: 1.3; }
+.property-location { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--secondary); }
+.property-specs { display: flex; gap: 16px; align-items: center; margin-top: 8px; flex-wrap: wrap; }
+.property-spec { font-family: 'Metropolis', sans-serif; font-size: 13px; color: var(--on-surface-variant); display: flex; align-items: center; gap: 6px; }
+.property-spec .material-symbols-outlined { font-size: 16px; }
+.property-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(127,118,102,0.15); }
+.property-cta { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.property-rera { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.02em; color: var(--outline); }
+
+/* Philosophy */
+.philosophy { padding: 120px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 900px) { .philosophy { grid-template-columns: 1fr; padding: 64px 20px; } }
+.philosophy-img { aspect-ratio: 4/5; overflow: hidden; background: var(--surface-container); }
+.philosophy-img img { width: 100%; height: 100%; object-fit: cover; }
+.philosophy-text { display: flex; flex-direction: column; gap: 32px; }
+
+/* Upcoming */
+.upcoming-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+@media (max-width: 900px) { .upcoming-grid { grid-template-columns: 1fr; } }
+.upcoming-list { display: flex; flex-direction: column; gap: 0; }
+.upcoming-item { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid rgba(127,118,102,0.15); cursor: pointer; transition: all 0.3s; }
+.upcoming-item:hover .upcoming-arrow { transform: translateX(4px) translateY(-4px); }
+.upcoming-name { font-family: 'Metropolis', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+.upcoming-arrow { font-size: 18px; color: var(--primary); transition: transform 0.3s; }
+.upcoming-img-wrap { position: relative; }
+.upcoming-img { aspect-ratio: 4/5; overflow: hidden; }
+.upcoming-img img { width: 100%; height: 100%; object-fit: cover; }
+.exclusivity-card { position: absolute; bottom: 40px; right: -30px; background: var(--ink); color: var(--white); padding: 32px 28px; max-width: 240px; }
+@media (max-width: 1100px) { .exclusivity-card { position: static; margin-top: 20px; max-width: 100%; } }
+.exclusivity-card p { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.exclusivity-card h4 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
+.exclusivity-card span { font-family: 'Metropolis', sans-serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+/* Bespoke Acquisition */
+.bespoke {
+  background: var(--surface-low); padding: 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; flex-wrap: wrap;
+}
+@media (max-width: 768px) { .bespoke { padding: 48px 20px; } }
+.bespoke-form { display: flex; gap: 0; flex: 1; min-width: 280px; max-width: 500px; }
+.bespoke-input {
+  flex: 1; border: none; border-bottom: 1px solid var(--outline); background: transparent;
+  padding: 16px 0; font-family: 'Metropolis', sans-serif; font-size: 14px;
+  color: var(--on-surface); outline: none; transition: border-color 0.3s;
+}
+.bespoke-input::placeholder { color: var(--outline); font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+.bespoke-input:focus { border-color: var(--gold); }
+.bespoke-btn { background: var(--ink); color: var(--white); border: none; padding: 16px 28px; font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.3s; }
+.bespoke-btn:hover { background: var(--primary); }
+
+/* === PORTFOLIO PAGE === */
+.page-hero { padding: 80px 80px 60px; }
+@media (max-width: 768px) { .page-hero { padding: 48px 20px 40px; } }
+.filter-bar { display: flex; gap: 20px; align-items: flex-end; flex-wrap: wrap; padding: 32px 0; border-top: 1px solid rgba(127,118,102,0.15); border-bottom: 1px solid rgba(127,118,102,0.15); margin-bottom: 60px; }
+.filter-group { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 160px; }
+.filter-label { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--secondary); }
+.filter-select { background: transparent; border: none; border-bottom: 1px solid var(--outline-variant); padding: 12px 0; font-family: 'Metropolis', sans-serif; font-size: 14px; color: var(--on-surface); outline: none; cursor: pointer; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237f7666'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; }
+.btn-refine { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 14px 24px; background: transparent; color: var(--ink); border: 1px solid var(--ink); cursor: pointer; white-space: nowrap; transition: all 0.3s; }
+.btn-refine:hover { background: var(--ink); color: var(--white); }
+.discover-more { display: flex; justify-content: center; padding: 60px 0 0; }
+.btn-ghost-ink { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; padding: 18px 48px; background: transparent; color: var(--ink); border: 1px solid var(--ink); cursor: pointer; transition: all 0.3s; }
+.btn-ghost-ink:hover { background: var(--ink); color: var(--white); }
+
+/* === DEVELOPMENT PAGE === */
+.dev-hero { position: relative; height: 70vh; min-height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+.dev-hero-bg { position: absolute; inset: 0; }
+.dev-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.dev-hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.dev-hero-content { position: relative; z-index: 2; color: var(--white); padding: 0 20px; }
+.dev-hero-eyebrow { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.dev-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 400; color: var(--white); margin-bottom: 32px; }
+.dev-hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.dev-hero-scroll { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.5); font-size: 20px; animation: bounce 2s infinite; cursor: pointer; }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+/* Architecture / narrative */
+.arch-section { padding: 120px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+@media (max-width: 900px) { .arch-section { grid-template-columns: 1fr; padding: 64px 20px; gap: 40px; } }
+.arch-img { aspect-ratio: 4/5; overflow: hidden; }
+.arch-img img { width: 100%; height: 100%; object-fit: cover; }
+.arch-img-right { order: 2; }
+@media (max-width: 900px) { .arch-img-right { order: -1; } }
+.arch-text { display: flex; flex-direction: column; gap: 24px; }
+.arch-text p { font-family: 'Metropolis', sans-serif; font-size: 16px; color: var(--on-surface-variant); line-height: 1.7; }
+
+/* Floor Plans */
+.floor-plans { padding: 80px; background: var(--surface-low); }
+@media (max-width: 768px) { .floor-plans { padding: 48px 20px; } }
+.floor-tabs { display: flex; gap: 0; margin-bottom: 48px; border-bottom: 1px solid rgba(127,118,102,0.2); }
+.floor-tab { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 16px 24px; background: transparent; border: none; cursor: pointer; color: var(--secondary); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.3s; }
+.floor-tab.active, .floor-tab:hover { color: var(--primary); border-bottom-color: var(--gold); }
+.floor-content { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+@media (max-width: 768px) { .floor-content { grid-template-columns: 1fr; } }
+.floor-plan-img { background: var(--white); padding: 32px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.floor-plan-img svg { width: 100%; max-width: 300px; }
+.floor-details { display: flex; flex-direction: column; gap: 24px; }
+.floor-spec-row { display: flex; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid rgba(127,118,102,0.12); }
+.floor-spec-key { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); }
+.floor-spec-val { font-family: 'Metropolis', sans-serif; font-size: 14px; font-weight: 400; color: var(--on-surface); }
+
+/* Amenities */
+.amenities-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
+.amenity-card { position: relative; aspect-ratio: 3/4; overflow: hidden; cursor: pointer; background: var(--surface-container); }
+.amenity-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.amenity-card:hover img { transform: scale(1.06); }
+.amenity-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%); }
+.amenity-label { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: var(--white); }
+.amenity-label span { font-size: 20px; display: block; margin-bottom: 6px; }
+.amenity-label p { font-family: 'Metropolis', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Connectivity */
+.connectivity { padding: 120px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: var(--ink); }
+@media (max-width: 900px) { .connectivity { grid-template-columns: 1fr; padding: 64px 20px; gap: 40px; } }
+.connectivity-map { background: rgba(255,255,255,0.05); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.connectivity-text { display: flex; flex-direction: column; gap: 32px; }
+.connectivity-text .section-eyebrow { color: var(--gold); }
+.connectivity-text .t-headline-lg { color: var(--white); }
+.conn-list { display: flex; flex-direction: column; gap: 0; }
+.conn-item { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.conn-left { display: flex; align-items: center; gap: 12px; }
+.conn-icon { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
+.conn-icon .material-symbols-outlined { font-size: 18px; color: var(--gold); }
+.conn-name { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+.conn-time { font-family: 'Metropolis', sans-serif; font-size: 13px; font-weight: 500; color: var(--gold); }
+
+/* === CONCIERGE / BOOK VIEW PAGE === */
+.concierge-section { padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; min-height: calc(100vh - 80px); }
+@media (max-width: 900px) { .concierge-section { grid-template-columns: 1fr; padding: 40px 20px; } }
+.concierge-left { display: flex; flex-direction: column; gap: 48px; }
+.agent-card { position: relative; }
+.agent-img { aspect-ratio: 4/5; overflow: hidden; background: var(--surface-container); max-width: 320px; }
+.agent-img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.6s; }
+.agent-img:hover img { filter: grayscale(0%); }
+.agent-info { position: absolute; bottom: -32px; right: 0; background: var(--surface); padding: 24px 28px; border: 1px solid rgba(127,118,102,0.1); max-width: 220px; }
+@media (max-width: 900px) { .agent-info { position: static; margin-top: 16px; max-width: 100%; } }
+.agent-info-role { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--primary); margin-bottom: 6px; }
+.agent-name { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+.agent-desc { font-family: 'Metropolis', sans-serif; font-size: 14px; color: var(--secondary); line-height: 1.5; }
+.concierge-title { padding-top: 60px; }
+@media (max-width: 900px) { .concierge-title { padding-top: 20px; } }
+.concierge-title h2 .gold { color: var(--primary); font-style: italic; }
+.perks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 32px 0; border-top: 1px solid rgba(127,118,102,0.15); border-bottom: 1px solid rgba(127,118,102,0.15); }
+.perk { display: flex; flex-direction: column; gap: 8px; }
+.perk .material-symbols-outlined { color: var(--primary); font-size: 20px; }
+.perk-title { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.perk-desc { font-family: 'Metropolis', sans-serif; font-size: 14px; color: var(--secondary); line-height: 1.5; }
+
+/* Booking Form */
+.booking-card { background: var(--white); border: 1px solid rgba(127,118,102,0.08); padding: 48px; position: relative; overflow: hidden; top: 0; }
+@media (max-width: 900px) { .booking-card { padding: 32px 24px; } }
+.progress-track { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: rgba(203,169,82,0.15); }
+.progress-fill { height: 100%; background: var(--gold); transition: width 0.5s ease; }
+.booking-step { display: none; }
+.booking-step.active { display: block; }
+.step-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; }
+.step-count { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--secondary); }
+.calendar { margin-bottom: 32px; }
+.cal-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.cal-nav-btn { background: none; border: none; cursor: pointer; color: var(--secondary); padding: 4px; transition: color 0.3s; display: flex; }
+.cal-nav-btn:hover { color: var(--primary); }
+.cal-month { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; }
+.cal-dow { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--secondary); padding: 8px 4px; }
+.cal-day { font-family: 'Metropolis', sans-serif; font-size: 13px; font-weight: 400; padding: 10px 4px; background: transparent; border: none; cursor: pointer; transition: all 0.25s; border-radius: 0; }
+.cal-day:hover { background: var(--gold); color: var(--white); }
+.cal-day.selected { background: var(--primary); color: var(--white); }
+.cal-day.today { font-weight: 700; color: var(--primary); }
+.cal-day.empty { cursor: default; }
+.time-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.time-slot { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; padding: 16px; background: transparent; border: 1px solid rgba(127,118,102,0.2); cursor: pointer; transition: all 0.25s; }
+.time-slot:hover, .time-slot.selected { border-color: var(--primary); background: rgba(118,91,5,0.05); }
+.btn-next-step { width: 100%; margin-top: 40px; background: var(--primary); color: var(--white); border: none; padding: 20px; font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
+.btn-next-step:hover { background: var(--gold); color: var(--ink); }
+.form-field { position: relative; margin-bottom: 32px; }
+.form-input { width: 100%; border: none; border-bottom: 1px solid rgba(127,118,102,0.3); background: transparent; padding: 16px 0 12px; font-family: 'Metropolis', sans-serif; font-size: 16px; color: var(--on-surface); outline: none; transition: border-color 0.3s; }
+.form-input::placeholder { color: transparent; }
+.form-input:focus { border-color: var(--gold); }
+.form-input:focus + label, .form-input:not(:placeholder-shown) + label { transform: translateY(-20px) scale(0.85); color: var(--primary); }
+.form-label { position: absolute; left: 0; top: 16px; font-family: 'Metropolis', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); transition: all 0.3s; transform-origin: left; pointer-events: none; }
+.pref-row { display: flex; gap: 24px; margin-top: 16px; }
+.pref-option { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.pref-option input { accent-color: var(--primary); }
+.pref-option span { font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.btn-back { flex: 0 0 auto; background: transparent; border: 1px solid rgba(127,118,102,0.2); color: var(--on-surface); padding: 20px 24px; font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+.btn-back:hover { background: var(--surface-container); }
+.step-btns { display: flex; gap: 12px; }
+.step-btns .btn-next-step { flex: 1; margin-top: 0; }
+.confirmation { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 20px 0; }
+.confirm-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(118,91,5,0.08); display: flex; align-items: center; justify-content: center; margin-bottom: 28px; }
+.confirm-icon .material-symbols-outlined { font-size: 40px; color: var(--primary); font-variation-settings: 'FILL' 1; }
+.confirm-note { background: var(--surface-low); border-left: 3px solid var(--gold); padding: 20px 24px; width: 100%; text-align: left; margin-top: 28px; }
+.confirm-note .t-label { color: var(--primary); margin-bottom: 8px; }
+.confirm-note em { font-family: 'Metropolis', sans-serif; font-size: 14px; font-style: italic; color: var(--on-surface); line-height: 1.6; }
+
+/* Lounge Banner */
+.lounge-banner { position: relative; height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.lounge-banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lounge-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+.lounge-content { position: relative; z-index: 2; text-align: center; color: var(--white); padding: 0 20px; }
+.lounge-eyebrow { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+.lounge-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 56px); font-weight: 400; color: var(--white); line-height: 1.15; margin-bottom: 40px; }
+.lounge-title em { font-style: italic; }
+.lounge-amenities { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+.lounge-amenity { display: flex; align-items: center; gap: 10px; }
+.lounge-amenity .material-symbols-outlined { font-size: 18px; }
+.lounge-amenity span { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
+
+/* === FOOTER === */
+footer {
+  background: var(--surface-low); border-top: 1px solid rgba(127,118,102,0.12);
+  padding: 80px 80px 48px;
+}
+@media (max-width: 768px) { footer { padding: 48px 20px; } }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; margin-bottom: 48px; }
+.footer-brand { max-width: 380px; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 500; color: var(--on-surface); letter-spacing: 0.08em; margin-bottom: 16px; }
+.footer-desc { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); line-height: 1.8; margin-bottom: 24px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer-link { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-surface-variant); text-decoration: none; cursor: pointer; transition: color 0.3s; }
+.footer-link:hover { color: var(--primary); }
+.rera-block { display: flex; align-items: center; gap: 16px; background: var(--white); border: 1px solid rgba(127,118,102,0.1); padding: 16px 20px; }
+.rera-qr { width: 64px; height: 64px; background: var(--surface-container); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rera-qr .material-symbols-outlined { font-size: 36px; color: var(--secondary); }
+.rera-info p:first-child { font-family: 'Metropolis', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--primary); margin-bottom: 4px; }
+.rera-info span { font-family: 'Metropolis', sans-serif; font-size: 10px; letter-spacing: 0.05em; color: var(--on-surface-variant); }
+.footer-bottom { padding-top: 24px; border-top: 1px solid rgba(127,118,102,0.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.footer-bottom span { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--outline); }
+
+/* Misc utilities */
+.gold-text { color: var(--primary); }
+.italic { font-style: italic; }
+.btn-primary { background: var(--ink); color: var(--white); border: none; padding: 18px 40px; font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+.btn-primary:hover { background: var(--primary); }
+.btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.4); padding: 17px 40px; font-family: 'Metropolis', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
+.divider { height: 1px; background: rgba(127,118,102,0.12); margin: 0 80px; }
+@media (max-width: 768px) { .divider { margin: 0 20px; } }
+
+/* Fade-in animation */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* Map placeholder in connectivity */
+.map-grid { display: grid; grid-template-columns: repeat(6,1fr); grid-template-rows: repeat(6,1fr); gap: 1px; width: 100%; height: 100%; padding: 20px; }
+.map-dot { background: rgba(255,255,255,0.06); border-radius: 50%; }
+.map-dot.lit { background: rgba(203,169,82,0.4); }
+.map-dot.bright { background: rgba(203,169,82,0.8); }
+.map-pin { position: absolute; bottom: 50%; left: 50%; transform: translate(-50%, 50%); color: var(--gold); font-size: 28px; }
+.map-label { position: absolute; bottom: 12px; right: 12px; font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+/* Sticky CTA footer on dev page */
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+  background: var(--surface)/95; backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(127,118,102,0.12);
+  padding: 16px 80px; display: none; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+}
+@media (max-width: 768px) { .sticky-cta { padding: 16px 20px; } }
+.sticky-cta.show { display: flex; }
+.sticky-cta-left { display: flex; flex-direction: column; }
+.sticky-cta-left span:first-child { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--secondary); }
+.sticky-cta-left span:last-child { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--on-surface); }
+.rera-footer-bar { background: var(--ink); padding: 12px 80px; }
+@media (max-width: 768px) { .rera-footer-bar { padding: 12px 20px; } }
+.rera-footer-bar p { font-family: 'Metropolis', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="showPage('home')">ESTATE MUMBAI</div>
+  <div class="nav-links">
+    <span class="nav-link active" id="nav-portfolio" onclick="showPage('portfolio')">Portfolio</span>
+    <span class="nav-link" id="nav-developments" onclick="showPage('developments')">Developments</span>
+    <span class="nav-link" id="nav-concierge" onclick="showPage('concierge')">Concierge</span>
+  </div>
+  <button class="btn-book-view" onclick="showPage('bookview')">Book View</button>
+  <div class="hamburger" id="hamburger" onclick="toggleMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <span class="nav-link" onclick="showPage('portfolio'); toggleMobile()">Portfolio</span>
+  <span class="nav-link" onclick="showPage('developments'); toggleMobile()">Developments</span>
+  <span class="nav-link" onclick="showPage('concierge'); toggleMobile()">Concierge</span>
+  <button class="btn-primary" onclick="showPage('bookview'); toggleMobile()">Book View</button>
+</div>
+
+<!-- ========== HOME PAGE ========== -->
+<div class="page active" id="page-home">
+  
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=80&auto=format&fit=crop" alt="Luxury Mumbai apartment interior"/>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Worli Seaface, Mumbai MMR</p>
+      <h1 class="hero-title">The Mumbai<br/>Metropolitan<br/><em>Collection.</em></h1>
+      <p class="hero-sub">A curated selection of architectural masterpieces defined by restraint, precision, and an uncompromising commitment to the art of measured grandeur.</p>
+      <div class="hero-ctas">
+        <button class="btn-primary-gold" onclick="showPage('portfolio')">Explore Residences</button>
+        <button class="btn-ghost-white" onclick="showPage('bookview')">View Private Showreel</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MMR Collection -->
+  <section class="section">
+    <div class="section-header fade-up">
+      <div class="section-header-text">
+        <p class="section-eyebrow">The MMR Collection</p>
+        <h2 class="t-headline-lg">Signature properties across South Mumbai, Worli, and Bandra that redefine the skyline.</h2>
+      </div>
+      <span class="link-view-all" onclick="showPage('portfolio')">View All Properties <span class="material-symbols-outlined" style="font-size:16px">arrow_forward</span></span>
+    </div>
+    <div class="property-grid">
+
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&auto=format&fit=crop" alt="The Altamount Pavilion"/>
+          <div class="property-badge">Featured Residence</div>
+          <div class="property-status">READY</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">The Altamount Pavilion</h3>
+          <p class="property-location">Altamount Road, South Mumbai</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>4 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>5,200 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">View Residence</span>
+            <span class="property-rera">P51900012345</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80&auto=format&fit=crop" alt="Sky Villa Worli"/>
+          <div class="property-badge">Starts ₹42 Cr</div>
+          <div class="property-status">PRIVATE<br/>TOURING</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">Sky Villa Worli</h3>
+          <p class="property-location">Bandra Avenue, Worli</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>5 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>7,800 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">Explore Estate</span>
+            <span class="property-rera">P51900098765</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Philosophy -->
+  <div class="philosophy fade-up">
+    <div class="philosophy-img">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&q=80&auto=format&fit=crop" alt="Art of Living"/>
+    </div>
+    <div class="philosophy-text">
+      <p class="section-eyebrow">Philosophy</p>
+      <h2 class="t-headline-lg">The Art of Living<br/>is the Art of Restraint.</h2>
+      <p class="t-body-lg" style="color:var(--on-surface-variant)">We believe that true luxury does not shout. It is found in the silence of perfectly aligned masonry, the tactile quality of hand-carved stone, and the thoughtful orchestration of light and space.</p>
+      <p class="t-body-md" style="color:var(--on-surface-variant)">Estate Mumbai curates more than just square footage; we curate experiences for those who seek the extraordinary. Our concierge services ensure that every transition into your new residence is as seamless as the architecture itself.</p>
+      <button class="btn-primary" onclick="showPage('concierge')">Learn About Concierge</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Upcoming -->
+  <section class="section">
+    <div class="upcoming-grid">
+      <div class="fade-up">
+        <p class="section-eyebrow">Upcoming Developments</p>
+        <h2 class="t-headline-lg" style="margin-bottom:40px">Early access opportunities for our most anticipated Mumbai landmarks.</h2>
+        <div class="upcoming-list">
+          <div class="upcoming-item">
+            <span class="upcoming-name">The Noble House, Juhu</span>
+            <span class="material-symbols-outlined upcoming-arrow">north_east</span>
+          </div>
+          <div class="upcoming-item">
+            <span class="upcoming-name">Zenith Beach, Lower Parel</span>
+            <span class="material-symbols-outlined upcoming-arrow">north_east</span>
+          </div>
+          <div class="upcoming-item">
+            <span class="upcoming-name">Marina Creek, Cliffe Parade</span>
+            <span class="material-symbols-outlined upcoming-arrow">north_east</span>
+          </div>
+        </div>
+      </div>
+      <div class="upcoming-img-wrap fade-up">
+        <div class="upcoming-img">
+          <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=80&auto=format&fit=crop" alt="Lifestyle by Estate"/>
+        </div>
+        <div class="exclusivity-card">
+          <p>Exclusivity Guaranteed</p>
+          <h4>Book a Private Tour</h4>
+          <span>Each portfolio entry is vetted for architectural significance and long-term asset value in the MMR market.</span>
+          <br/><br/>
+          <button class="btn-primary-gold" style="width:100%;padding:14px 20px" onclick="showPage('bookview')">Book Private Tour</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bespoke -->
+  <section class="bespoke fade-up">
+    <div>
+      <p class="section-eyebrow" style="margin-bottom:8px">Bespoke Acquisition</p>
+      <h3 class="t-headline-md" style="margin-bottom:16px">Our private client team specialises in sourcing off-market assets.</h3>
+      <p class="t-body-md" style="color:var(--on-surface-variant)">Share your requirements for a personalised portfolio curation.</p>
+    </div>
+    <div class="bespoke-form">
+      <input class="bespoke-input" type="email" placeholder="Your Email Address"/>
+      <button class="bespoke-btn">Connect with Concierge</button>
+    </div>
+  </section>
+
+  <!-- MahaRERA compliance bar -->
+  <div style="background:var(--surface-low);padding:24px 80px;border-top:1px solid rgba(127,118,102,0.12);display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <span style="font-size:10px;font-family:Metropolis,sans-serif;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--mahaRERA-blue)">MahaRERA Registered</span>
+    <span style="font-size:10px;font-family:Metropolis,sans-serif;color:var(--secondary)">Transparency and trust are at our core. All projects listed are compliant with MahaRERA regulations.</span>
+    <span style="margin-left:auto;font-size:10px;font-family:Metropolis,sans-serif;font-weight:600;letter-spacing:0.1em;color:var(--secondary)">AGGREGATOR REG NO: A51900000000</span>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">ESTATE MUMBAI</p>
+        <p class="footer-desc">Mumbai's premier luxury real estate concierge. Specialising in South Mumbai & BKC Sky Residences.</p>
+        <div class="footer-links">
+          <span class="footer-link">Privacy Policy</span>
+          <span class="footer-link">Terms of Service</span>
+          <span class="footer-link">MahaRERA Compliance</span>
+          <span class="footer-link">Careers</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px">
+        <div class="rera-block">
+          <div class="rera-qr"><span class="material-symbols-outlined">qr_code_2</span></div>
+          <div class="rera-info">
+            <p>MahaRERA Registered</p>
+            <span>Reg No: A51900000000</span>
+          </div>
+        </div>
+        <span style="font-size:10px;font-family:Metropolis,sans-serif;font-weight:500;letter-spacing:0.08em;color:var(--outline)">Head Office: Level 28, One World Center, Lower Parel, Mumbai 400013</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Estate Mumbai. All Rights Reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== PORTFOLIO PAGE ========== -->
+<div class="page" id="page-portfolio">
+  <div class="page-hero container" style="padding-top:80px;padding-bottom:0">
+    <p class="section-eyebrow fade-up">The Portfolio</p>
+    <h1 class="t-display fade-up" style="margin-bottom:20px">The Portfolio</h1>
+    <p class="t-body-lg fade-up" style="color:var(--on-surface-variant);max-width:500px">An curated selection of architectural landmarks and bespoke residences across the Mumbai Metropolitan Region. Refined for the discerning few.</p>
+  </div>
+
+  <div style="padding:40px 80px 0" class="fade-up">
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">Region</span>
+        <select class="filter-select">
+          <option>All Regions</option>
+          <option>South Mumbai</option>
+          <option>Worli</option>
+          <option>Bandra</option>
+          <option>BKC</option>
+          <option>Juhu</option>
+          <option>Coastal Reach</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Configuration</span>
+        <select class="filter-select">
+          <option>Any Beds</option>
+          <option>3 BHK</option>
+          <option>4 BHK</option>
+          <option>5 BHK</option>
+          <option>Villa</option>
+          <option>Penthouse</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Status</span>
+        <select class="filter-select">
+          <option>All Projects</option>
+          <option>Ready</option>
+          <option>New Launch</option>
+          <option>Under Construction</option>
+        </select>
+      </div>
+      <button class="btn-refine">Refine Search</button>
+    </div>
+  </div>
+
+  <div style="padding:0 80px 80px">
+    <div class="property-grid">
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&auto=format&fit=crop" alt="The Azure Penthouse"/>
+          <div class="property-badge">Starts ₹42 Cr</div>
+          <div class="property-status">READY</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">The Azure Penthouse</h3>
+          <p class="property-location">Worli, South Mumbai</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>4 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>5,200 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">View Residence</span>
+            <span class="property-rera">P51900012345</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80&auto=format&fit=crop" alt="Casa Del Mar"/>
+          <div class="property-badge">Starts ₹18.5 Cr</div>
+          <div class="property-status">NEW<br/>LAUNCH</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">Casa Del Mar</h3>
+          <p class="property-location">Alibaug, Coastal Reach</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">villa</span>5 Bed Villa</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>8,000 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">Explore Estate</span>
+            <span class="property-rera">P52600098765</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80&auto=format&fit=crop" alt="The Obsidian Suites"/>
+          <div class="property-badge">Starts ₹24 Cr</div>
+          <div class="property-status">UNDER<br/>CONSTRUCTION</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">The Obsidian Suites</h3>
+          <p class="property-location">BKC, Bandra</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>3 & 4 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>3,800 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">Preview Suite</span>
+            <span class="property-rera">P51800054321</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up" onclick="showPage('developments')">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1724?w=800&q=80&auto=format&fit=crop" alt="The Aurelian"/>
+          <div class="property-badge">Starts ₹68 Cr</div>
+          <div class="property-status">PRIVATE<br/>VIEWING</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">The Aurelian</h3>
+          <p class="property-location">Worli Seaface, Mumbai</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>4 BHK Sky Villa</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>5,600 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">View Residence</span>
+            <span class="property-rera">P51900078901</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop" alt="The Meridian"/>
+          <div class="property-badge">Starts ₹31 Cr</div>
+          <div class="property-status">READY</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">The Meridian</h3>
+          <p class="property-location">Lower Parel, Central Mumbai</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>3 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>2,800 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">View Residence</span>
+            <span class="property-rera">P51900033211</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card fade-up">
+        <div class="property-card-img">
+          <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80&auto=format&fit=crop" alt="Zenith Juhu"/>
+          <div class="property-badge">Starts ₹22 Cr</div>
+          <div class="property-status">NEW<br/>LAUNCH</div>
+        </div>
+        <div class="property-card-body">
+          <h3 class="property-name">Zenith Juhu</h3>
+          <p class="property-location">Juhu, North Mumbai</p>
+          <div class="property-specs">
+            <span class="property-spec"><span class="material-symbols-outlined">bed</span>4 BHK</span>
+            <span class="property-spec"><span class="material-symbols-outlined">square_foot</span>4,200 sq.ft</span>
+          </div>
+          <div class="property-footer">
+            <span class="property-cta">Explore Estate</span>
+            <span class="property-rera">P52600054322</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="discover-more fade-up">
+      <button class="btn-ghost-ink">Discover More Properties</button>
+    </div>
+  </div>
+
+  <!-- Bespoke -->
+  <section class="bespoke fade-up">
+    <div>
+      <p class="section-eyebrow" style="margin-bottom:8px">Bespoke Acquisition</p>
+      <h3 class="t-headline-md" style="margin-bottom:12px">Our private client team specialises in sourcing off-market assets.</h3>
+      <p class="t-body-md" style="color:var(--on-surface-variant)">Share your requirements for a personalised portfolio curation.</p>
+    </div>
+    <div class="bespoke-form">
+      <input class="bespoke-input" type="email" placeholder="Your Email Address"/>
+      <button class="bespoke-btn">Connect with Concierge</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">ESTATE MUMBAI</p>
+        <p class="footer-desc">Mumbai's premier luxury real estate concierge. Specialising in South Mumbai & BKC Sky Residences.</p>
+        <div class="footer-links">
+          <span class="footer-link">Privacy Policy</span>
+          <span class="footer-link">Terms of Service</span>
+          <span class="footer-link">MahaRERA Compliance</span>
+          <span class="footer-link">Careers</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:16px">
+        <div class="rera-block">
+          <div class="rera-qr"><span class="material-symbols-outlined">qr_code_2</span></div>
+          <div class="rera-info">
+            <p>MahaRERA Registered Portfolio</p>
+            <span>Reg No: A51900000000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Estate Mumbai. All Rights Reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== DEVELOPMENTS PAGE ========== -->
+<div class="page" id="page-developments">
+  <div class="dev-hero">
+    <div class="dev-hero-bg">
+      <img src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=1800&q=80&auto=format&fit=crop" alt="The Aurelian"/>
+    </div>
+    <div class="dev-hero-content">
+      <p class="dev-hero-eyebrow">Worli Seaface, Mumbai</p>
+      <h1 class="dev-hero-title">The Aurelian</h1>
+      <div class="dev-hero-ctas">
+        <button class="btn-primary-gold" onclick="showPage('bookview')">Schedule Site Visit</button>
+        <button class="btn-ghost">Explore Narrative</button>
+      </div>
+    </div>
+    <div class="dev-hero-scroll"><span class="material-symbols-outlined">keyboard_arrow_down</span></div>
+  </div>
+
+  <div class="arch-section fade-up">
+    <div class="arch-text">
+      <p class="section-eyebrow">Architectural Vision</p>
+      <h2 class="t-headline-md">A Dialogue Between<br/>Light &amp; Sky</h2>
+      <p>Designed by world-renowned structural artists, The Aurelian represents a shift from living in Mumbai to ascending above it. Every cantilevered terrace is angled to capture the exact trajectory of the Arabian Sea sunset.</p>
+      <p>The core philosophy of "Quiet Luxury" is embedded in every millimetre — from the Italian Statuario marble in the lobby to the sound-dampening acoustic glass that renders the city's pulse into a silent, visual symphony.</p>
+    </div>
+    <div class="arch-img arch-img-right">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&auto=format&fit=crop" alt="Interior Architecture"/>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Floor Plans -->
+  <div class="floor-plans fade-up">
+    <p class="section-eyebrow" style="margin-bottom:8px">Space Mastery</p>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:32px">
+      <h2 class="t-headline-lg">Select Your Sanctuary</h2>
+      <div style="display:flex;gap:12px">
+        <button class="floor-tab active" onclick="switchFloor(this,'A')">3D View</button>
+        <button class="floor-tab" onclick="switchFloor(this,'B')">3D Walkthrough</button>
+      </div>
+    </div>
+    <div class="floor-tabs">
+      <button class="floor-tab active" onclick="switchUnit(this,'sky-villa')">Unit Type A</button>
+      <button class="floor-tab" onclick="switchUnit(this,'duplex')">Unit Type B</button>
+    </div>
+
+    <div class="floor-content">
+      <div class="floor-plan-img">
+        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="10" width="280" height="280" fill="#f5f3f3" stroke="#d0c5b2" stroke-width="1"/>
+          <rect x="30" y="30" width="100" height="80" fill="white" stroke="#1b1c1c" stroke-width="1.5"/>
+          <rect x="140" y="30" width="130" height="80" fill="white" stroke="#1b1c1c" stroke-width="1.5"/>
+          <rect x="30" y="120" width="80" height="70" fill="white" stroke="#1b1c1c" stroke-width="1.5"/>
+          <rect x="120" y="120" width="150" height="70" fill="#e6f0f8" stroke="#CBA952" stroke-width="2"/>
+          <rect x="30" y="200" width="240" height="80" fill="white" stroke="#1b1c1c" stroke-width="1.5"/>
+          <text x="155" y="160" font-family="Metropolis" font-size="8" fill="#765b05" text-anchor="middle" letter-spacing="1">LIVING</text>
+          <text x="80" y="150" font-family="Metropolis" font-size="7" fill="#7f7666" text-anchor="middle">BED 1</text>
+          <text x="205" y="75" font-family="Metropolis" font-size="7" fill="#7f7666" text-anchor="middle">MASTER</text>
+          <text x="150" y="245" font-family="Metropolis" font-size="7" fill="#7f7666" text-anchor="middle">TERRACE</text>
+          <text x="80" y="75" font-family="Metropolis" font-size="7" fill="#7f7666" text-anchor="middle">KITCHEN</text>
+          <line x1="120" y1="120" x2="120" y2="190" stroke="#d0c5b2" stroke-width="0.5"/>
+          <line x1="30" y1="110" x2="270" y2="110" stroke="#d0c5b2" stroke-width="0.5"/>
+          <line x1="130" y1="30" x2="130" y2="110" stroke="#d0c5b2" stroke-width="0.5"/>
+        </svg>
+      </div>
+      <div class="floor-details" id="unit-sky-villa">
+        <div>
+          <p style="font-size:11px;font-family:Metropolis,sans-serif;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);margin-bottom:8px">Unit Type A</p>
+          <h3 class="t-headline-md">4 BHK Sky Villa</h3>
+        </div>
+        <div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Carpet Area</span><span class="floor-spec-val">3,600 sq.ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Deckl</span><span class="floor-spec-val">870 sq.ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Ceiling Height</span><span class="floor-spec-val">12.5 ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Floor</span><span class="floor-spec-val">32F – 48F</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Price Range</span><span class="floor-spec-val">₹68 Cr – ₹82 Cr</span></div>
+        </div>
+        <button class="btn-primary-gold" onclick="showPage('bookview')">Schedule Private Visit</button>
+      </div>
+      <div class="floor-details" id="unit-duplex" style="display:none">
+        <div>
+          <p style="font-size:11px;font-family:Metropolis,sans-serif;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--secondary);margin-bottom:8px">Unit Type B</p>
+          <h3 class="t-headline-md">5 BHK Duplex</h3>
+        </div>
+        <div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Carpet Area</span><span class="floor-spec-val">5,200 sq.ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Deck</span><span class="floor-spec-val">1,200 sq.ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Ceiling Height</span><span class="floor-spec-val">14 ft</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Floor</span><span class="floor-spec-val">49F – 52F (Top)</span></div>
+          <div class="floor-spec-row"><span class="floor-spec-key">Price Range</span><span class="floor-spec-val">₹1.2 Cr – ₹1.4 Cr</span></div>
+          <p style="font-size:11px;font-family:Metropolis,sans-serif;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--error);margin-top:8px">Limited Availability</p>
+        </div>
+        <button class="btn-primary-gold" onclick="showPage('bookview')">Schedule Private Visit</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Curated Luxuries -->
+  <section class="section fade-up">
+    <p class="section-eyebrow" style="text-align:center;margin-bottom:4px">The Collection</p>
+    <h2 class="t-headline-lg" style="text-align:center;margin-bottom:48px">Curated Luxuries</h2>
+    <div class="amenities-grid">
+      <div class="amenity-card">
+        <img src="https://images.unsplash.com/photo-1519750157634-b6d493a0f77c?w=600&q=80&auto=format&fit=crop" alt="Sky Pool"/>
+        <div class="amenity-overlay"></div>
+        <div class="amenity-label">
+          <span class="material-symbols-outlined">pool</span>
+          <p>Sky Infinity Pool</p>
+        </div>
+      </div>
+      <div class="amenity-card">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80&auto=format&fit=crop" alt="Gymnasium"/>
+        <div class="amenity-overlay"></div>
+        <div class="amenity-label">
+          <span class="material-symbols-outlined">fitness_center</span>
+          <p>Equinox Gymnasium</p>
+        </div>
+      </div>
+      <div class="amenity-card">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80&auto=format&fit=crop" alt="Wellness Spa"/>
+        <div class="amenity-overlay"></div>
+        <div class="amenity-label">
+          <span class="material-symbols-outlined">spa</span>
+          <p>Aura Wellness Spa</p>
+        </div>
+      </div>
+      <div class="amenity-card">
+        <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80&auto=format&fit=crop" alt="Cigar Club"/>
+        <div class="amenity-overlay"></div>
+        <div class="amenity-label">
+          <span class="material-symbols-outlined">smoking_rooms</span>
+          <p>The Cigar Club</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connectivity -->
+  <div class="connectivity fade-up">
+    <div class="connectivity-text">
+      <p class="section-eyebrow">The Nexus</p>
+      <h2 class="t-headline-lg" style="color:var(--white)">Unrivaled Access</h2>
+      <p style="font-family:Metropolis,sans-serif;font-size:16px;color:rgba(255,255,255,0.6);line-height:1.7">Positioned at the heart of Worli, The Aurelian offers more than a home; it offers time. Connected to the city's major arteries, every destination is within reach.</p>
+      <div class="conn-list">
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon"><span class="material-symbols-outlined">train</span></div>
+            <span class="conn-name">MTHL (Trans-Harbour Link)</span>
+          </div>
+          <span class="conn-time">12 MINS</span>
+        </div>
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon"><span class="material-symbols-outlined">subway</span></div>
+            <span class="conn-name">Worli Metro Station</span>
+          </div>
+          <span class="conn-time">04 MINS</span>
+        </div>
+        <div class="conn-item">
+          <div class="conn-left">
+            <div class="conn-icon"><span class="material-symbols-outlined">directions_car</span></div>
+            <span class="conn-name">Sea Link Entrance</span>
+          </div>
+          <span class="conn-time">08 MINS</span>
+        </div>
+      </div>
+    </div>
+    <div class="connectivity-map" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)">
+      <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;opacity:0.7">
+        <line x1="50" y1="160" x2="350" y2="160" stroke="rgba(203,169,82,0.3)" stroke-width="1"/>
+        <line x1="200" y1="20" x2="200" y2="300" stroke="rgba(203,169,82,0.3)" stroke-width="1"/>
+        <line x1="60" y1="60" x2="340" y2="260" stroke="rgba(203,169,82,0.15)" stroke-width="1"/>
+        <line x1="340" y1="60" x2="60" y2="260" stroke="rgba(203,169,82,0.15)" stroke-width="1"/>
+        <circle cx="200" cy="160" r="60" fill="none" stroke="rgba(203,169,82,0.2)" stroke-width="1"/>
+        <circle cx="200" cy="160" r="120" fill="none" stroke="rgba(203,169,82,0.1)" stroke-width="1"/>
+        <circle cx="200" cy="160" r="8" fill="#CBA952"/>
+        <circle cx="200" cy="160" r="16" fill="rgba(203,169,82,0.2)"/>
+        <circle cx="200" cy="160" r="24" fill="rgba(203,169,82,0.1)"/>
+        <circle cx="140" cy="120" r="4" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="260" cy="130" r="4" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="170" cy="220" r="4" fill="rgba(255,255,255,0.3)"/>
+        <circle cx="290" cy="200" r="4" fill="rgba(255,255,255,0.3)"/>
+        <text x="205" y="148" font-family="Metropolis" font-size="8" fill="rgba(255,255,255,0.5)" letter-spacing="1">WORLI</text>
+      </svg>
+      <span class="map-label">Connectivity Map</span>
+    </div>
+  </div>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta show" id="dev-sticky-cta">
+    <div class="sticky-cta-left">
+      <span>P51900012345 • The Aurelian Worli</span>
+      <span>The Aurelian</span>
+    </div>
+    <div style="display:flex;gap:12px">
+      <button class="btn-ghost-ink">Download Brochure</button>
+      <button class="btn-primary-gold" onclick="showPage('bookview')">Schedule Site Visit</button>
+    </div>
+  </div>
+
+  <div class="rera-footer-bar">
+    <p>P51900012345 • The Aurelian Worli — All information is indicative. Subject to MahaRERA regulations. E&OE.</p>
+  </div>
+
+  <footer style="padding-bottom:80px">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">ESTATE MUMBAI</p>
+        <p class="footer-desc">Mumbai's premier luxury real estate concierge. Specialising in South Mumbai & BKC Sky Residences.</p>
+        <div class="footer-links">
+          <span class="footer-link">Privacy Policy</span>
+          <span class="footer-link">Terms of Service</span>
+          <span class="footer-link">MahaRERA Compliance</span>
+          <span class="footer-link">Careers</span>
+        </div>
+      </div>
+      <div class="rera-block">
+        <div class="rera-qr"><span class="material-symbols-outlined">qr_code_2</span></div>
+        <div class="rera-info">
+          <p>MahaRERA Registered</p>
+          <span>Reg No: A51900000000</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Estate Mumbai. All Rights Reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== CONCIERGE PAGE ========== -->
+<div class="page" id="page-concierge">
+  <div style="padding:80px;background:var(--surface-low);border-bottom:1px solid rgba(127,118,102,0.12)">
+    <p class="section-eyebrow fade-up">Private Concierge</p>
+    <h1 class="t-display fade-up" style="max-width:600px;margin-bottom:20px">Where Every Detail Is<br/><em>Orchestrated.</em></h1>
+    <p class="t-body-lg fade-up" style="color:var(--on-surface-variant);max-width:500px">Our concierge division exists for those who understand that the most precious commodity isn't property—it's time and absolute peace of mind.</p>
+  </div>
+
+  <section style="padding:120px 80px">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px">
+      <div class="fade-up" style="border-top:1px solid rgba(127,118,102,0.2);padding-top:32px">
+        <span class="material-symbols-outlined" style="font-size:28px;color:var(--primary);margin-bottom:20px;display:block">verified_user</span>
+        <h3 class="t-headline-md" style="margin-bottom:16px">Absolute Discretion</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">Every client relationship is protected by iron-clad NDAs. Our private acquisition services are invisible to the market.</p>
+      </div>
+      <div class="fade-up" style="border-top:1px solid rgba(127,118,102,0.2);padding-top:32px">
+        <span class="material-symbols-outlined" style="font-size:28px;color:var(--primary);margin-bottom:20px;display:block">directions_car</span>
+        <h3 class="t-headline-md" style="margin-bottom:16px">Chauffeur Viewing</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">Our dedicated Mercedes fleet provides seamless, door-to-door property viewing services across the entire MMR region.</p>
+      </div>
+      <div class="fade-up" style="border-top:1px solid rgba(127,118,102,0.2);padding-top:32px">
+        <span class="material-symbols-outlined" style="font-size:28px;color:var(--primary);margin-bottom:20px;display:block">handshake</span>
+        <h3 class="t-headline-md" style="margin-bottom:16px">Off-Market Access</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">Access to properties never listed publicly. Our network of developers and private owners gives you first right of refusal.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Team -->
+  <section style="padding:120px 80px">
+    <p class="section-eyebrow fade-up" style="margin-bottom:8px">Your Private Advisory Team</p>
+    <h2 class="t-headline-lg fade-up" style="margin-bottom:60px">Dedicated specialists who live and breathe the MMR market.</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px">
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:3/4;overflow:hidden;background:var(--surface-container)">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80&auto=format&fit=crop" alt="Vikram Malhotra" style="width:100%;height:100%;object-fit:cover;filter:grayscale(60%);transition:filter 0.5s" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(60%)'"/>
+        </div>
+        <p class="t-label" style="color:var(--primary)">South Mumbai Lead</p>
+        <h3 class="t-headline-md">Vikram Malhotra</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">12 years specialising in South Mumbai ultra-luxury. Former Sotheby's International Realty, EMEA division.</p>
+      </div>
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:3/4;overflow:hidden;background:var(--surface-container)">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format&fit=crop" alt="Priya Narayan" style="width:100%;height:100%;object-fit:cover;filter:grayscale(60%);transition:filter 0.5s" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(60%)'"/>
+        </div>
+        <p class="t-label" style="color:var(--primary)">BKC & Bandra Lead</p>
+        <h3 class="t-headline-md">Priya Narayan</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">Specialises in commercial-to-residential conversions and new-build acquisitions across the BKC and Bandra corridors.</p>
+      </div>
+      <div class="fade-up" style="display:flex;flex-direction:column;gap:16px">
+        <div style="aspect-ratio:3/4;overflow:hidden;background:var(--surface-container)">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Arjun Mehta" style="width:100%;height:100%;object-fit:cover;filter:grayscale(60%);transition:filter 0.5s" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(60%)'"/>
+        </div>
+        <p class="t-label" style="color:var(--primary)">Investment Lead</p>
+        <h3 class="t-headline-md">Arjun Mehta</h3>
+        <p class="t-body-md" style="color:var(--on-surface-variant)">Portfolio construction and off-plan investment strategies. Former Goldman Sachs real assets desk, Mumbai.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lounge -->
+  <div class="lounge-banner">
+    <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?w=1800&q=80&auto=format&fit=crop" alt="Lounge Experience"/>
+    <div class="lounge-overlay"></div>
+    <div class="lounge-content">
+      <p class="lounge-eyebrow">The Lobby Experience</p>
+      <h2 class="lounge-title">Where Every Meeting<br/>Is A <em>Signature Event</em></h2>
+      <div class="lounge-amenities">
+        <div class="lounge-amenity"><span class="material-symbols-outlined">local_cafe</span><span>Artisan Barista</span></div>
+        <div class="lounge-amenity"><span class="material-symbols-outlined">lock</span><span>Secure Suites</span></div>
+        <div class="lounge-amenity"><span class="material-symbols-outlined">wifi</span><span>Gigabit Uplink</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">ESTATE MUMBAI</p>
+        <p class="footer-desc">Mumbai's premier luxury real estate concierge. Specialising in South Mumbai & BKC Sky Residences.</p>
+        <div class="footer-links">
+          <span class="footer-link">Privacy Policy</span>
+          <span class="footer-link">Terms of Service</span>
+          <span class="footer-link">MahaRERA Compliance</span>
+          <span class="footer-link">Careers</span>
+        </div>
+      </div>
+      <div class="rera-block">
+        <div class="rera-qr"><span class="material-symbols-outlined">qr_code_2</span></div>
+        <div class="rera-info">
+          <p>MahaRERA Registered</p>
+          <span>Reg No: A51900000000</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Estate Mumbai. All Rights Reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<!-- ========== BOOK VIEW PAGE ========== -->
+<div class="page" id="page-bookview">
+  <section class="concierge-section">
+    <!-- LEFT -->
+    <div class="concierge-left">
+      <div class="agent-card">
+        <div class="agent-img">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80&auto=format&fit=crop" alt="Vikram Malhotra"/>
+        </div>
+        <div class="agent-info">
+          <p class="agent-info-role">Your Private Guide</p>
+          <h3 class="agent-name">Vikram Malhotra</h3>
+          <p class="agent-desc">Dedicated Relationship Manager for the MMR Ultra-Luxury Segment.</p>
+        </div>
+      </div>
+
+      <div class="concierge-title">
+        <h2 class="t-display" style="line-height:1.15;margin-bottom:20px">Secure Your<br/><span class="gold-text italic">Private Tour</span></h2>
+        <p class="t-body-lg" style="color:var(--on-surface-variant);max-width:400px">Experience the pinnacle of Mumbai real estate through a curated walk-through of our most exclusive portfolios.</p>
+      </div>
+
+      <div class="perks-grid">
+        <div class="perk">
+          <span class="material-symbols-outlined">verified_user</span>
+          <p class="perk-title">Confidentiality</p>
+          <p class="perk-desc">Guaranteed discretion</p>
+        </div>
+        <div class="perk">
+          <span class="material-symbols-outlined">directions_car</span>
+          <p class="perk-title">Chauffeur Service</p>
+          <p class="perk-desc">Door-to-door transit</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Booking Card -->
+    <div class="booking-card">
+      <div class="progress-track">
+        <div class="progress-fill" id="booking-progress" style="width:33%"></div>
+      </div>
+
+      <!-- Step 1: Date -->
+      <div class="booking-step active" id="bstep-1">
+        <div class="step-header">
+          <h4 class="t-headline-md">Select a Date</h4>
+          <span class="step-count">STEP 01/03</span>
+        </div>
+        <div class="calendar">
+          <div class="cal-nav">
+            <button class="cal-nav-btn" onclick="changeMonth(-1)"><span class="material-symbols-outlined">chevron_left</span></button>
+            <span class="cal-month" id="cal-month-label">OCTOBER 2024</span>
+            <button class="cal-nav-btn" onclick="changeMonth(1)"><span class="material-symbols-outlined">chevron_right</span></button>
+          </div>
+          <div class="cal-grid" id="cal-grid">
+            <span class="cal-dow">S</span><span class="cal-dow">M</span><span class="cal-dow">T</span><span class="cal-dow">W</span><span class="cal-dow">T</span><span class="cal-dow">F</span><span class="cal-dow">S</span>
+          </div>
+        </div>
+        <p class="t-label" style="color:var(--secondary);margin-bottom:16px">Available Slots</p>
+        <div class="time-slots">
+          <button class="time-slot" onclick="selectTime(this)">10:00 AM</button>
+          <button class="time-slot selected" onclick="selectTime(this)">11:30 AM</button>
+          <button class="time-slot" onclick="selectTime(this)">02:00 PM</button>
+          <button class="time-slot" onclick="selectTime(this)">04:30 PM</button>
+        </div>
+        <button class="btn-next-step" onclick="bookingStep(2)">Continue to Details</button>
+      </div>
+
+      <!-- Step 2: Details -->
+      <div class="booking-step" id="bstep-2">
+        <div class="step-header">
+          <h4 class="t-headline-md">Personal Details</h4>
+          <span class="step-count">STEP 02/03</span>
+        </div>
+        <div class="form-field">
+          <input class="form-input" type="text" id="b-name" placeholder="FULL NAME"/>
+          <label class="form-label" for="b-name">Full Name</label>
+        </div>
+        <div class="form-field">
+          <input class="form-input" type="email" id="b-email" placeholder="EMAIL ADDRESS"/>
+          <label class="form-label" for="b-email">Email Address</label>
+        </div>
+        <div class="form-field">
+          <input class="form-input" type="tel" id="b-phone" placeholder="PHONE NUMBER (+91)"/>
+          <label class="form-label" for="b-phone">Phone Number (+91)</label>
+        </div>
+        <div>
+          <p class="t-label" style="color:var(--secondary);margin-bottom:16px">Preference</p>
+          <div class="pref-row">
+            <label class="pref-option"><input type="radio" name="pref" value="residential" checked/><span>Residential</span></label>
+            <label class="pref-option"><input type="radio" name="pref" value="investment"/><span>Investment</span></label>
+          </div>
+        </div>
+        <div class="step-btns" style="margin-top:40px">
+          <button class="btn-back" onclick="bookingStep(1)">Back</button>
+          <button class="btn-next-step" onclick="bookingStep(3)">Confirm Booking</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Confirmation -->
+      <div class="booking-step" id="bstep-3">
+        <div class="confirmation">
+          <div class="confirm-icon">
+            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">check_circle</span>
+          </div>
+          <h4 class="t-headline-md" style="margin-bottom:12px">Request Confirmed</h4>
+          <p class="t-body-md" style="color:var(--secondary);max-width:320px">Vikram has been notified. You will receive a concierge call within 15 minutes to finalise your itinerary.</p>
+          <div class="confirm-note">
+            <p class="t-label" style="color:var(--primary);margin-bottom:8px">Next Step</p>
+            <em>"Our private chauffeur will arrive at your location 30 minutes prior to the scheduled viewing."</em>
+          </div>
+          <button class="t-label" style="margin-top:32px;background:none;border:none;cursor:pointer;color:var(--primary);text-decoration:underline;text-underline-offset:3px" onclick="bookingStep(1)">Return to Portfolio</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lounge -->
+  <div class="lounge-banner">
+    <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28f8e?w=1800&q=80&auto=format&fit=crop" alt="The Lounge"/>
+    <div class="lounge-overlay"></div>
+    <div class="lounge-content">
+      <p class="lounge-eyebrow">The Lobby Experience</p>
+      <h2 class="lounge-title">Where Every Meeting<br/>Is A <em>Signature Event</em></h2>
+      <div class="lounge-amenities">
+        <div class="lounge-amenity"><span class="material-symbols-outlined">local_cafe</span><span>Artisan Barista</span></div>
+        <div class="lounge-amenity"><span class="material-symbols-outlined">lock</span><span>Secure Suites</span></div>
+        <div class="lounge-amenity"><span class="material-symbols-outlined">wifi</span><span>Gigabit Uplink</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">ESTATE MUMBAI</p>
+        <p class="footer-desc">Mumbai's premier luxury real estate concierge. Specialising in South Mumbai & BKC Sky Residences.</p>
+        <div class="footer-links">
+          <span class="footer-link">Privacy Policy</span>
+          <span class="footer-link">Terms of Service</span>
+          <span class="footer-link">MahaRERA Compliance</span>
+          <span class="footer-link">Careers</span>
+        </div>
+      </div>
+      <div class="rera-block">
+        <div class="rera-qr"><span class="material-symbols-outlined">qr_code_2</span></div>
+        <div class="rera-info">
+          <p>MahaRERA Registered</p>
+          <span>Reg No: A51900000000</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Estate Mumbai. All Rights Reserved.</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+// ======= PAGE NAVIGATION =======
+const pages = ['home','portfolio','developments','concierge','bookview'];
+const navIds = ['nav-portfolio','nav-developments','nav-concierge'];
+
+function showPage(name) {
+  // Hide sticky CTA by default
+  const stickyCta = document.getElementById('dev-sticky-cta');
+  if (stickyCta) stickyCta.classList.remove('show');
+
+  pages.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.remove('active');
+  });
+  const target = document.getElementById('page-' + name);
+  if (target) target.classList.add('active');
+  
+  // Update nav active state
+  navIds.forEach(id => document.getElementById(id)?.classList.remove('active'));
+  const navMap = {portfolio:'nav-portfolio',developments:'nav-developments',concierge:'nav-concierge'};
+  if (navMap[name]) document.getElementById(navMap[name])?.classList.add('active');
+
+  // Show dev sticky CTA
+  if (name === 'developments' && stickyCta) stickyCta.classList.add('show');
+
+  window.scrollTo({top:0, behavior:'smooth'});
+  observeFadeUps();
+}
+
+// ======= MOBILE MENU =======
+function toggleMobile() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+// ======= NAV SCROLL =======
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ======= FADE UP ANIMATIONS =======
+function observeFadeUps() {
+  setTimeout(() => {
+    const els = document.querySelectorAll('.fade-up:not(.visible)');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(el => obs.observe(el));
+  }, 100);
+}
+observeFadeUps();
+
+// ======= CALENDAR =======
+let calDate = new Date(2024, 9, 1); // Oct 2024
+let selectedDay = 4;
+
+const MONTHS = ['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
+
+function renderCalendar() {
+  const label = document.getElementById('cal-month-label');
+  const grid = document.getElementById('cal-grid');
+  if (!label || !grid) return;
+
+  label.textContent = MONTHS[calDate.getMonth()] + ' ' + calDate.getFullYear();
+
+  // Keep header
+  const headers = Array.from(grid.querySelectorAll('.cal-dow'));
+  grid.innerHTML = '';
+  headers.forEach(h => grid.appendChild(h.cloneNode(true)));
+
+  const firstDay = new Date(calDate.getFullYear(), calDate.getMonth(), 1).getDay();
+  const daysInMonth = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 0).getDate();
+
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement('div');
+    blank.className = 'cal-day empty';
+    grid.appendChild(blank);
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const btn = document.createElement('button');
+    btn.className = 'cal-day';
+    btn.textContent = d;
+    if (d === selectedDay) btn.classList.add('selected');
+    btn.addEventListener('click', () => {
+      selectedDay = d;
+      document.querySelectorAll('.cal-day').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    });
+    grid.appendChild(btn);
+  }
+}
+
+function changeMonth(dir) {
+  calDate.setMonth(calDate.getMonth() + dir);
+  renderCalendar();
+}
+
+renderCalendar();
+
+// ======= TIME SLOTS =======
+function selectTime(btn) {
+  document.querySelectorAll('.time-slot').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+// ======= BOOKING STEPS =======
+function bookingStep(step) {
+  [1,2,3].forEach(s => {
+    const el = document.getElementById('bstep-' + s);
+    if (el) { el.classList.remove('active'); }
+  });
+  const target = document.getElementById('bstep-' + step);
+  if (target) {
+    target.classList.add('active');
+    target.style.opacity = '0';
+    target.style.transform = 'translateX(20px)';
+    setTimeout(() => {
+      target.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      target.style.opacity = '1';
+      target.style.transform = 'translateX(0)';
+    }, 30);
+  }
+  const progress = document.getElementById('booking-progress');
+  if (progress) progress.style.width = (step / 3 * 100) + '%';
+}
+
+// ======= FLOOR PLAN TABS =======
+function switchUnit(btn, unitId) {
+  document.querySelectorAll('.floor-tabs .floor-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  ['sky-villa','duplex'].forEach(id => {
+    const el = document.getElementById('unit-' + id);
+    if (el) el.style.display = id === unitId ? 'flex' : 'none';
+  });
+}
+
+function switchFloor(btn) {
+  document.querySelectorAll('.floor-plans .floor-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Handle mobile nav padding
+function checkMobile() {
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.section, .floor-plans, .connectivity, .concierge-section, .page-hero').forEach(el => {
+      el.style.padding = '';
+    });
+  }
+}
+window.addEventListener('resize', checkMobile);
+checkMobile();
+</script>
+</body>
+</html>
